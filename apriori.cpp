@@ -15,6 +15,7 @@
 
 using namespace std;
 
+
 long double round(long double value, int pos){
     long double temp;
     temp = value * pow( 10, pos );
@@ -207,7 +208,7 @@ int main (int argc, char ** argv) {
     chrono::steady_clock::time_point begin = chrono::steady_clock::now();
     apriori.process();
     chrono::steady_clock::time_point end = chrono::steady_clock::now();
-    cout << "Time difference = " << chrono::duration_cast<chrono::microseconds>(end - begin).count() << "[µs]" << endl;
+    cout << chrono::duration_cast<chrono::microseconds>(end - begin).count() << endl;
 
     OutputPrinter outputPrinter(outputFileName, apriori.getAssociationRules());
     
